@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "poetry_101"
+version = "0.1.0"
+description = ""
+authors = ["Peter Sinkovicz <antsticky@gmail.com>"]
+
+packages = [
+    { include = "packageA", from = "src" },
+    { include = "packageB", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+run-projectA = "packageA.main:main"
+run-projectB = "packageB.main:main"
